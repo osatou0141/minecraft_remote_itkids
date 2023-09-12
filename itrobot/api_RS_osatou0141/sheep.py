@@ -91,4 +91,5 @@ elif color == 15:
     WOOL = param.RED_WOOL
 else:
     WOOL = param.BLACK_WOOL
+
 makesheep()
