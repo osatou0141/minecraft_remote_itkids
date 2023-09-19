@@ -1,8 +1,26 @@
 from mcje.minecraft import Minecraft
 import param_MCJE as param
 import random as rd
+from time import sleep
 
 mc = Minecraft.create(port=param.PORT_MC)
+
+# using wool color
+ORANGE_WOOL = "orange_wool"
+MAGENTA_WOOL = "magenta_wool"
+LIGHT_BLUE_WOOL = "light_blue_wool"
+YELLOW_WOOL = "yellow_wool"
+LIME_WOOL = "lime_wool"
+PINK_WOOL = "pink_wool"
+GRAY_WOOL = "gray_wool"
+LIGHT_GRAY_WOOL = "light_gray_wool"
+CYAN_WOOL = "cyan_wool"
+PURPLE_WOOL = "purple_wool"
+BLUE_WOOL = "blue_wool"
+BROWN_WOOL = "brown_wool"
+GREEN_WOOL = "green_wool"
+RED_WOOL = "red_wool"
+BLACK_WOOL = "black_wool"
 
 
 # ------------- spawn ------------- #
@@ -52,35 +70,35 @@ def spawn(x=0, y=63, z=0):
     if color == 1:
         WOOL = param.WHITE_WOOL
     elif color == 2:
-        WOOL = param.ORANGE_WOOL
+        WOOL = ORANGE_WOOL
     elif color == 3:
-        WOOL = param.MAGENTA_WOOL
+        WOOL = MAGENTA_WOOL
     elif color == 4:
-        WOOL = param.LIGHT_BLUE_WOOL
+        WOOL = LIGHT_BLUE_WOOL
     elif color == 5:
-        WOOL = param.YELLOW_WOOL
+        WOOL = YELLOW_WOOL
     elif color == 6:
-        WOOL = param.LIME_WOOL
+        WOOL = LIME_WOOL
     elif color == 7:
-        WOOL = param.PINK_CONCRETE
+        WOOL = PINK_WOOL
     elif color == 8:
-        WOOL = param.GRAY_WOOL
+        WOOL = GRAY_WOOL
     elif color == 9:
-        WOOL = param.LIGHT_GRAY_WOOL
+        WOOL = LIGHT_GRAY_WOOL
     elif color == 10:
-        WOOL = param.CYAN_WOOL
+        WOOL = CYAN_WOOL
     elif color == 11:
-        WOOL = param.PURPLE_WOOL
+        WOOL = PURPLE_WOOL
     elif color == 12:
-        WOOL = param.BLUE_WOOL
+        WOOL = BLUE_WOOL
     elif color == 13:
-        WOOL = param.BROWN_WOOL
+        WOOL = BROWN_WOOL
     elif color == 14:
-        WOOL = param.GREEN_WOOL
+        WOOL = GREEN_WOOL
     elif color == 15:
-        WOOL = param.RED_WOOL
+        WOOL = RED_WOOL
     else:
-        WOOL = param.BLACK_WOOL
+        WOOL = BLACK_WOOL
     leg(x, y, z, WOOL)             # 右前足
     leg(x, y, z + 12, WOOL)        # 左前足
     leg(x + 24, y, z, WOOL)        # 右後足
@@ -136,3 +154,9 @@ def despawn(x=0, y=63, z=0):
     c_head(x, y, z)
     c_face(x, y, z)
     mc.postToChat('despawn sheep')
+
+
+if __name__ == "__main__":
+    spawn()
+    sleep(3)
+    despawn()
