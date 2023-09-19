@@ -1,9 +1,7 @@
-SHEEP.APIの取扱説明書
-- 羊の巨像が出る
-- 大きさ、向きは固定
-- 色はランダム
-- 複数の動作を追加予定
- [<img src="./images/sheep.png" width="400">](./images/sheep.png)
-
-動作の種類
-- 頭が動く
+SHEEP_APIの取扱説明書
+- 初めに、import sheep_api as saと入れることで使えるようになります。
+  例）sa.spawn()
+- 使用できる構文は
+  spawn・・・・・羊をスポーンさせます。
+  despawn・・・・羊をデスポーンさせます。
+  の2つです。
