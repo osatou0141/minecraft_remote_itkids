@@ -12,4 +12,5 @@ def reset(x=0, y=63, z=0):
     mc.postToChat('finish')
 
 
-reset()
+if __name__ == "__main__":
+    reset()
