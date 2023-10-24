@@ -5,7 +5,8 @@ from time import sleep
 
 mc = Minecraft.create(port=param.PORT_MC)
 
-# using wool color
+
+# -------- used wool color -------- #
 ORANGE_WOOL = "orange_wool"
 MAGENTA_WOOL = "magenta_wool"
 LIGHT_BLUE_WOOL = "light_blue_wool"
@@ -65,7 +66,7 @@ def face(x, y, z):
     mc.setBlocks(x - 14, y + 39, z + 12, x - 13, y + 40, z + 13, param.WHITE_CONCRETE)
 
 
-def spawn(x=0, y=63, z=0):
+def spawn(x, y, z):
     color = rd.randint(1, 16)
     if color == 1:
         WOOL = param.WHITE_WOOL
@@ -145,7 +146,7 @@ def c_face(x, y, z):
     mc.setBlocks(x - 14, y + 39, z + 12, x - 13, y + 40, z + 13, param.AIR)
 
 
-def despawn(x=0, y=63, z=0):
+def despawn(x, y, z):
     c_leg(x, y, z)             # 右前足
     c_leg(x, y, z + 12)        # 左前足
     c_leg(x + 24, y, z)        # 右後足
@@ -156,7 +157,21 @@ def despawn(x=0, y=63, z=0):
     mc.postToChat('despawn sheep')
 
 
+# ------------- reset ------------- #
+def reset(x, y, z):
+    mc.postToChat('reset field')
+    mc.setBlocks(x - 35, y, z - 35, x + 65, y + 100, z + 65, param.AIR)
+    mc.setBlocks(x - 35, y - 1, z - 35, x + 65, y - 1, z + 65, param.GRASS_BLOCK)
+    mc.postToChat('finish')
+
+
+# --------- practice code --------- #
 if __name__ == "__main__":
-    spawn()
+    x = 0
+    y = 63
+    z = 0
+    reset(x, y, z)
+    sleep(5)
+    spawn(x, y, z)
     sleep(3)
-    despawn()
+    despawn(x, y, z)
